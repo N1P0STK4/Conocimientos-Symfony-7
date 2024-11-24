@@ -1,0 +1,20 @@
+<h1>Funciones</h1>
+{#funciones predefinidas#}
+{{ max([1,4,7,2]) }} <br/>
+{{ min([1,4,7,2]) }} <br/>
+{{ random(animales) }} <br/>
+
+{% for i in range(0, 100, 5) %}
+    {{i}} <br/>
+{% endfor %}
+
+<h1>Filtros</h1>
+{{animales|length}}
+
+{% set email = '    email@email.com       ' %}
+{{ dump(email|trim|upper) }}
+
+<h1>Extensiones personalizadas</h1>
+
+{{ multiplicar(2)|raw }}
+{{ 12|multiplicar|raw }}

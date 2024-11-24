@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<HTML lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <title>
+        {% block titulo %} Inicio {% endblock %} - Bienvenidos
+        </title>
+    </head>
+    <body>
+        <div id="header">
+            {% block cabecera %}
+                <h1>Cabecera de la plantilla</h1>
+            {% endblock %}
+            <hr>
+        </div>
+        <section id="content">
+            {% block contenido %}
+                <p>Contenido por defecto</p>
+            {% endblock %}
+            <hr>
+        </section>
+    </body>
+</HTML>

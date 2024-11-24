@@ -1,0 +1,60 @@
+{% extends "layouts/master.html.twig" %}
+
+
+{% block titulo %} animales {% endblock %}
+
+{% block cabecera %}
+    {{ parent() }}
+    <h1>Animales</h1>
+{% endblock %}
+
+{% block contenido %}
+    {#
+    <h1>{{ title }}</h1>
+    <h2>Tu nombre es: {{ nombre }} {{ apellidos }}</h2>
+    #}
+    {% set helloe = "Hola mundo en twig" %}
+    <h4>{{ helloe }}</h4>
+
+    {# trabajar con arrays #}
+    {{ dump(animales) }}
+    {{ animales[1] }}
+
+    {# arrays asociativos  #}
+    {{ dump(pajaros) }}
+    {{ pajaros.tipo ~ ' - '  ~ pajaros.raza }}
+
+    {# condicionales #}
+    {% if pajaros.tipo == "loro" %}
+        <h1>Cuidado un loro volador</h1>
+    {% else %}
+        <h2>No hay pajaros a la vista</h2>
+    {% endif %}
+
+    {# bucle #}
+    {% if animales|length >= 0 %}
+        <ul>
+            {% for animal in animales %}
+                <li>
+                    {{animal}}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% for i in 0..10 %}
+        {{i}}</br>
+    {% endfor %}
+
+    {% if pajaros.color starts with 'r' %}
+        <h1>Empieza por r</h1>
+    {% endif %}
+
+    {% if pajaros.color ends with 'o' %}
+    <h1>Termina por o</h1>
+
+    {{ include('partials/funciones.html.twig') }}
+
+{% endif %}
+
+{% endblock %}
